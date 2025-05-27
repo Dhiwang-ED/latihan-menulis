@@ -202,7 +202,7 @@
 
     function buatSoal() {
       gridContainer.innerHTML = "";
-      const soalAcak = acakArray(kataList).slice(0, 8); // tampilkan 8 soal
+      const soalAcak = acakArray(kataList).slice(0, 5); // tampilkan 8 soal
       soalAcak.forEach(kata => {
         const hurufBesar = kata.toUpperCase();
         const div = document.createElement("div");
