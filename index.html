@@ -1,158 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Worksheet Latihan Menulis Kata</title>
-<style>
-  @font-face {
-    font-family: 'GaelleAbc';
-    src: url('fonts/GaelleAbc.ttf') format('truetype');
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Latihan Menulis Kata</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'GaelleAbc';
+      src: url('fonts/GaelleAbc.ttf') format('truetype');
+    }
 
-  body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background: #e6f2e6;
-    margin: 20px;
-    color: #2a5d2a;
-  }
-  h1 {
-    text-align: center;
-    color: #1b3d1b;
-    margin-bottom: 10px;
-  }
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    background: #d9f0d9;
-    border-radius: 12px;
-    padding: 20px 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .instructions {
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 600;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px 40px;
-  }
-  .soal-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .kata-soal {
-    font-size: 24px;
-    font-weight: 700;
-    color: #145214;
-    margin-bottom: 6px;
-  }
-
-  .placeholder-guide {
-    font-family: 'GaelleAbc', cursive;
-    font-size: 32px;
-    color: #000;
-    opacity: 0.3;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    text-transform: uppercase;
-  }
-
-  .tempat-tulis-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    height: 50px;
-    margin-top: 8px;
-  }
-
-  .tempat-tulis {
-    width: 100%;
-    height: 100%;
-    border-bottom: 3px dashed #4caf50;
-    border-radius: 6px;
-    font-size: 32px;
-    padding-left: 8px;
-    color: #2a5d2a;
-    outline: none;
-    resize: none;
-    background: transparent;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-
-  .btn-group {
-    text-align: center;
-    margin-top: 25px;
-  }
-  button {
-    background: #4caf50;
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    margin: 0 10px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 16px;
-    box-shadow: 0 3px 6px rgba(76,175,80,0.4);
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background: #388e3c;
-  }
-
-  @media print {
     body {
-      background: #e6f2e6;
-      margin: 0;
-      color: black;
-    }
-    .container {
-      box-shadow: none;
-      border-radius: 0;
-      padding: 15px 20px;
-      margin: 0;
-      max-width: 100%;
-      background: #f5fff5;
-      border: 3px dashed #4caf50;
-    }
-    button, .btn-group {
-      display: none;
-    }
-    .placeholder-guide {
-      opacity: 0.2;
-    }
-    h1 {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fffce6;
+      margin: 20px;
       color: #2a5d2a;
-      font-size: 26px;
-      border-bottom: 2px solid #4caf50;
-      padding-bottom: 6px;
     }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border: 4px dashed #4caf50;
+      border-radius: 15px;
+    }
+
+    .judul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .judul img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .judul h1 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 40px;
+      color: #2196f3;
+      margin: 0;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    }
+
     .instructions {
-      font-size: 14px;
-      font-style: italic;
-      color: #388e3c;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 30px;
     }
-  }
-</style>
+
+    .soal-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .kata-soal {
+      font-size: 32px;
+      font-weight: bold;
+      color: #145214;
+      margin-bottom: 12px;
+    }
+
+    .tempat-tulis-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: 60px;
+      margin-top: 10px;
+    }
+
+    .tempat-tulis {
+      width: 100%;
+      height: 100%;
+      border-bottom: 3px dashed #4caf50;
+      border-radius: 6px;
+      font-size: 36px;
+      color: #2a5d2a;
+      background: white;
+      outline: none;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .placeholder-guide {
+      font-family: 'GaelleAbc', cursive;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+      opacity: 0.25;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+    }
+
+    .btn-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: #388e3c;
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        margin: 0;
+      }
+      .container {
+        border: 2px solid #4caf50;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      button, .btn-group {
+        display: none;
+      }
+      .placeholder-guide {
+        opacity: 0.2;
+      }
+      .judul img {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Worksheet Latihan Menulis Kata</h1>
-    <div class="instructions">
-      Tulis ulang kata di atas dengan mengikuti garis bantu di bawahnya.
+    <div class="judul">
+      <img src="logo-anak.png" alt="Logo Anak" />
+      <h1>Latihan Menulis Kata</h1>
     </div>
-    <div class="grid" id="gridContainer"></div>
+    <div class="instructions">Tulis ulang kata di bawah ini menggunakan garis bantu di kolom yang tersedia.</div>
+    <div id="gridContainer"></div>
     <div class="btn-group">
       <button id="btnBuatSoal">Buat Soal Baru</button>
       <button id="btnReset">Reset</button>
@@ -160,57 +167,49 @@
     </div>
   </div>
 
-<script>
-  const kataList = [
-    "rumah", "buku", "sekolah", "matahari", "kucing", "meja", "kursi", "jalan", "pohon", "langit",
-    "bola", "mobil", "roti", "ikan", "taman", "laptop", "air", "piring", "gelas", "sendok",
-    "komputer", "kamera", "lampu", "jaket", "topi", "baju", "celana", "sepatu", "tas", "pensil",
-    "pena", "penghapus", "penggaris", "televisi", "radio", "jam", "majalah", "koran", "gitar", "papan",
-    "kaca", "tirai", "dinding", "lantai", "atap", "pintu", "jendela", "tangga", "kereta", "kapal",
-    "pesawat", "perahu", "sepeda", "motor", "angkot", "truk", "traktor", "balon", "layang", "uang",
-    "kartu", "mainan", "boneka", "keranjang", "ember", "sapu", "pel", "kunci", "dompet", "kursus",
-    "kelas", "guru", "murid", "teman", "kakak", "adik", "ayah", "ibu", "nenek", "kakek",
-    "dokter", "perawat", "polisi", "tentara", "pilot", "petani", "nelayan", "montir", "tukang", "penulis",
-    "penyanyi", "pelukis", "pemadam", "pemahat", "pelayan", "pedagang", "petugas", "pemulung", "pemandu", "penjaga"
-  ];
+  <script>
+    const kataList = [
+      "rumah", "buku", "sekolah", "matahari", "kucing", "meja", "kursi", "jalan", "pohon", "langit",
+      "bola", "mobil", "roti", "ikan", "taman", "laptop", "air", "piring", "gelas", "sendok"
+    ];
 
-  const gridContainer = document.getElementById("gridContainer");
-  const btnBuatSoal = document.getElementById("btnBuatSoal");
-  const btnReset = document.getElementById("btnReset");
+    const gridContainer = document.getElementById("gridContainer");
+    const btnBuatSoal = document.getElementById("btnBuatSoal");
+    const btnReset = document.getElementById("btnReset");
 
-  function acakArray(arr) {
-    const array = arr.slice();
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    function acakArray(arr) {
+      const array = arr.slice();
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     }
-    return array;
-  }
 
-  function buatSoal() {
-    gridContainer.innerHTML = "";
-    const soalAcak = acakArray(kataList).slice(0, 10);
-    soalAcak.forEach(kata => {
-      const hurufBesar = kata.toUpperCase();
-      const div = document.createElement("div");
-      div.className = "soal-item";
-      div.innerHTML = `
-        <div class="kata-soal">${hurufBesar}</div>
-        <div class="tempat-tulis-wrapper">
-          <div class="placeholder-guide">${hurufBesar}</div>
-          <textarea class="tempat-tulis"></textarea>
-        </div>
-      `;
-      gridContainer.appendChild(div);
+    function buatSoal() {
+      gridContainer.innerHTML = "";
+      const soalAcak = acakArray(kataList).slice(0, 4);
+      soalAcak.forEach(kata => {
+        const hurufBesar = kata.toUpperCase();
+        const div = document.createElement("div");
+        div.className = "soal-item";
+        div.innerHTML = `
+          <div class="kata-soal">${hurufBesar}</div>
+          <div class="tempat-tulis-wrapper">
+            <div class="placeholder-guide">${hurufBesar}</div>
+            <textarea class="tempat-tulis"></textarea>
+          </div>
+        `;
+        gridContainer.appendChild(div);
+      });
+    }
+
+    btnBuatSoal.addEventListener("click", buatSoal);
+    btnReset.addEventListener("click", () => {
+      document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
     });
-  }
 
-  btnBuatSoal.addEventListener("click", buatSoal);
-  btnReset.addEventListener("click", () => {
-    document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
-  });
-
-  buatSoal();
-</script>
+    buatSoal();
+  </script>
 </body>
 </html>
