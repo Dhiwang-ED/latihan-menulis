@@ -20,17 +20,20 @@
 
     .container {
       max-width: 720px;
+      height: 1050px; /* Tinggi A4 di resolusi 96dpi */
       margin: 0 auto;
       padding: 20px;
       background: #d9fdd9;
       border-radius: 12px;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .judul-wrapper {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .judul-wrapper img {
@@ -42,8 +45,8 @@
     h1 {
       font-family: 'Chewy', cursive;
       font-size: 40px;
-      color: #f57c00;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      color: #e65100;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
       margin: 0;
     }
 
@@ -51,13 +54,13 @@
       text-align: center;
       font-size: 18px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 24px;
     }
 
     .soal-item {
@@ -67,15 +70,15 @@
     }
 
     .kata-soal {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: bold;
       color: #145214;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .placeholder-guide {
       font-family: 'GaelleAbc', cursive;
-      font-size: 38px;
+      font-size: 30px;
       color: #000;
       opacity: 0.3;
       pointer-events: none;
@@ -86,15 +89,15 @@
       white-space: nowrap;
       text-transform: uppercase;
       font-weight: bold;
-      letter-spacing: 8px;
+      letter-spacing: 6px;
     }
 
     .tempat-tulis-wrapper {
       position: relative;
       width: 100%;
       max-width: 500px;
-      height: 60px;
-      margin-top: 8px;
+      height: 50px;
+      margin-top: 4px;
       background: white;
       border-radius: 8px;
     }
@@ -104,7 +107,7 @@
       height: 100%;
       border-bottom: 3px dashed #4caf50;
       border-radius: 6px;
-      font-size: 36px;
+      font-size: 30px;
       padding-left: 10px;
       color: #2a5d2a;
       outline: none;
@@ -116,15 +119,15 @@
 
     .btn-group {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 24px;
     }
 
     button {
       background: #4caf50;
       color: white;
       border: none;
-      padding: 12px 28px;
-      margin: 0 10px;
+      padding: 10px 22px;
+      margin: 0 8px;
       border-radius: 30px;
       cursor: pointer;
       font-weight: bold;
@@ -137,11 +140,6 @@
     }
 
     @media print {
-      @page {
-        size: A4 portrait;
-        margin: 20mm;
-      }
-
       body {
         background: white;
         margin: 0;
@@ -152,6 +150,7 @@
         border-radius: 0;
         background: white;
         padding: 10px;
+        height: auto;
       }
 
       .btn-group, button {
@@ -203,7 +202,7 @@
 
     function buatSoal() {
       gridContainer.innerHTML = "";
-      const soalAcak = acakArray(kataList).slice(0, 4);
+      const soalAcak = acakArray(kataList).slice(0, 8); // tampilkan 8 soal
       soalAcak.forEach(kata => {
         const hurufBesar = kata.toUpperCase();
         const div = document.createElement("div");
@@ -224,7 +223,7 @@
       document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
     });
 
-    buatSoal();
+    buatSoal(); // generate awal
   </script>
 </body>
 </html>
