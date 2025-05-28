@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <style>
     @font-face {
-      font-family: 'GaelleAbc';
-      src: url('fonts/GaelleAbc.ttf') format('truetype');
+      font-family: 'KGPrimaryDotsLined';
+      src: url('fonts/KGPrimaryDotsLined.ttf') format('truetype');
     }
 
     body {
@@ -75,7 +75,7 @@
     }
 
     .placeholder-guide {
-      font-family: 'GaelleAbc', cursive;
+      font-family: 'KGPrimaryDotsLined', cursive;
       font-size: 30px;
       color: #000;
       opacity: 0.3;
@@ -209,7 +209,7 @@
 
     function buatSoal() {
       gridContainer.innerHTML = "";
-      const soalAcak = acakArray(kataList).slice(0, 6); // tampilkan 5 soal
+      const soalAcak = acakArray(kataList).slice(0, 5);
       soalAcak.forEach(kata => {
         const formatKata = kapitalHurufDepan(kata);
         const div = document.createElement("div");
@@ -230,7 +230,7 @@
       document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
     });
 
-    buatSoal(); // generate awal
+    buatSoal();
   </script>
 </body>
 </html>
