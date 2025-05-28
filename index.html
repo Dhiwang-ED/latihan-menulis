@@ -20,13 +20,11 @@
 
     .container {
       max-width: 720px;
-      height: 1050px; /* Tinggi A4 di resolusi 96dpi */
       margin: 0 auto;
       padding: 20px;
       background: #d9fdd9;
       border-radius: 12px;
       box-sizing: border-box;
-      overflow: hidden;
     }
 
     .judul-wrapper {
@@ -87,7 +85,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       white-space: nowrap;
-      text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 6px;
     }
@@ -150,7 +147,6 @@
         border-radius: 0;
         background: white;
         padding: 10px;
-        height: auto;
       }
 
       .btn-group, button {
@@ -182,9 +178,16 @@
 
   <script>
     const kataList = [
-      "rumah", "sekolah", "matahari", "kucing", "mobil", "roti", "ikan", "taman",
-      "air", "piring", "kamera", "jaket", "topi", "baju", "tas", "kelas",
-      "guru", "teman", "kakak", "ibu", "dokter", "tentara", "pilot", "montir"
+      "rumah", "sekolah", "matahari", "kucing", "mobil", "roti", "ikan", "taman", "air", "piring",
+      "kamera", "jaket", "topi", "baju", "tas", "kelas", "guru", "teman", "kakak", "ibu",
+      "dokter", "tentara", "pilot", "montir", "apel", "jeruk", "pisang", "singa", "gajah", "zebra",
+      "komputer", "meja", "kursi", "buku", "lampu", "pena", "pensil", "penggaris", "penghapus", "kapur",
+      "rumput", "pohon", "daun", "bunga", "sawah", "ladang", "gunung", "laut", "danau", "sungai",
+      "awan", "langit", "bintang", "bulan", "planet", "galaksi", "roket", "pesawat", "kereta", "kapal",
+      "motor", "sepeda", "truk", "ambulans", "polisi", "pemadam", "kue", "permen", "cokelat", "es krim",
+      "susu", "teh", "kopi", "air putih", "jus", "nasi", "mie", "bakso", "ayam", "ikan bakar",
+      "sandal", "sepatu", "kaos", "jaket", "sarung", "selimut", "bantal", "kasur", "guling", "lemari",
+      "jendela", "pintu", "atap", "lantai", "dinding", "kaca", "tirai", "karpet", "jam", "televisi"
     ];
 
     const gridContainer = document.getElementById("gridContainer");
@@ -200,17 +203,21 @@
       return array;
     }
 
+    function kapitalHurufDepan(kata) {
+      return kata.charAt(0).toUpperCase() + kata.slice(1).toLowerCase();
+    }
+
     function buatSoal() {
       gridContainer.innerHTML = "";
-      const soalAcak = acakArray(kataList).slice(0, 5); // tampilkan 8 soal
+      const soalAcak = acakArray(kataList).slice(0, 6); // tampilkan 5 soal
       soalAcak.forEach(kata => {
-        const hurufBesar = kata.toUpperCase();
+        const formatKata = kapitalHurufDepan(kata);
         const div = document.createElement("div");
         div.className = "soal-item";
         div.innerHTML = `
-          <div class="kata-soal">${hurufBesar}</div>
+          <div class="kata-soal">${formatKata}</div>
           <div class="tempat-tulis-wrapper">
-            <div class="placeholder-guide">${hurufBesar}</div>
+            <div class="placeholder-guide">${formatKata}</div>
             <textarea class="tempat-tulis"></textarea>
           </div>
         `;
