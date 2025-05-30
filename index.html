@@ -6,9 +6,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <style>
     @font-face {
-  font-family: 'KGPrimaryDots';
-  src: url('fonts/KGPrimaryDots.ttf') format('truetype');
-}
+      font-family: 'KGPrimaryDots';
+      src: url('fonts/KGPrimaryDots.ttf') format('truetype');
+    }
 
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -43,6 +43,7 @@
       font-size: 36px;
       color: #e65100;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
 
     .instructions {
@@ -55,7 +56,7 @@
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 32px;
     }
 
     .soal-item {
@@ -65,15 +66,15 @@
     }
 
     .kata-soal {
-      font-size: 28px;
+      font-size: 40px;
       font-weight: bold;
       color: #145214;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
 
     .placeholder-guide {
       font-family: 'KGPrimaryDots', cursive;
-      font-size: 30px;
+      font-size: 40px;
       color: #000;
       opacity: 0.3;
       pointer-events: none;
@@ -83,14 +84,14 @@
       transform: translate(-50%, -50%);
       white-space: nowrap;
       text-transform: capitalize;
-      letter-spacing: 6px;
+      letter-spacing: 10px;
     }
 
     .tempat-tulis-wrapper {
       position: relative;
       width: 100%;
       max-width: 500px;
-      height: 50px;
+      height: 70px;
       background: white;
       border-radius: 8px;
     }
@@ -100,7 +101,7 @@
       height: 100%;
       border-bottom: 3px dashed #4caf50;
       border-radius: 6px;
-      font-size: 30px;
+      font-size: 40px;
       padding-left: 10px;
       color: #2a5d2a;
       outline: none;
@@ -108,6 +109,7 @@
       position: relative;
       z-index: 1;
       text-align: center;
+      line-height: 70px;
     }
 
     .btn-group {
@@ -151,6 +153,24 @@
 
       .placeholder-guide {
         opacity: 0.2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .kata-soal, .tempat-tulis, .placeholder-guide {
+        font-size: 32px;
+      }
+
+      .tempat-tulis-wrapper {
+        height: 60px;
+      }
+
+      .grid {
+        gap: 24px;
       }
     }
   </style>
@@ -207,7 +227,7 @@
 
     function buatSoal() {
       gridContainer.innerHTML = "";
-      const soalAcak = acakArray(kataList).slice(0, 7);
+      const soalAcak = acakArray(kataList).slice(0, 5);
       soalAcak.forEach(kata => {
         const kapital = kapitalDepan(kata);
         const div = document.createElement("div");
@@ -228,7 +248,7 @@
       document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
     });
 
-    buatSoal(); // Generate awal
+    buatSoal();
   </script>
 </body>
 </html>
