@@ -94,22 +94,7 @@
       height: 70px;
       background: white;
       border-radius: 8px;
-    }
-
-    .tempat-tulis {
-      width: 100%;
-      height: 100%;
       border-bottom: 3px dashed #4caf50;
-      border-radius: 6px;
-      font-size: 40px;
-      padding-left: 10px;
-      color: #2a5d2a;
-      outline: none;
-      background: transparent;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      line-height: 70px;
     }
 
     .btn-group {
@@ -161,7 +146,7 @@
         padding: 10px;
       }
 
-      .kata-soal, .tempat-tulis, .placeholder-guide {
+      .kata-soal, .placeholder-guide {
         font-size: 32px;
       }
 
@@ -187,7 +172,6 @@
     <div class="grid" id="gridContainer"></div>
     <div class="btn-group">
       <button id="btnBuatSoal">Buat Soal Baru</button>
-      <button id="btnReset">Reset</button>
       <button onclick="window.print()">Cetak</button>
     </div>
   </div>
@@ -210,7 +194,6 @@
 
     const gridContainer = document.getElementById("gridContainer");
     const btnBuatSoal = document.getElementById("btnBuatSoal");
-    const btnReset = document.getElementById("btnReset");
 
     function acakArray(arr) {
       const array = arr.slice();
@@ -236,7 +219,6 @@
           <div class="kata-soal">${kapital}</div>
           <div class="tempat-tulis-wrapper">
             <div class="placeholder-guide">${kapital}</div>
-            <textarea class="tempat-tulis"></textarea>
           </div>
         `;
         gridContainer.appendChild(div);
@@ -244,10 +226,8 @@
     }
 
     btnBuatSoal.addEventListener("click", buatSoal);
-    btnReset.addEventListener("click", () => {
-      document.querySelectorAll(".tempat-tulis").forEach(t => (t.value = ""));
-    });
 
+    // Generate awal
     buatSoal();
   </script>
 </body>
